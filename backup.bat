@@ -24,13 +24,13 @@ reg export HKCU HKEY_CURRENT_USER.reg
 type "Success!" >> regtools-backup.log
 type "All registry hives exported. Merging registry files into unified file..." >> regtools-backup.log
 echo "All registry hives exported. Merging registry files into unified file..."
-type "Registry backup finished." >> regtools-backup.log
 type *.reg > registry-backup.reg
+type "Registry backup finished." >> regtools-backup.log
 move registry-backup.reg ..
 move regtools-backup.log ..
 type "Cleaning up..." >> ../regtools-backup.log
 del *.*
 chdir ..
 rmdir regtools-backup-temp
-type "Registry backup finished!" >> regtools-backup.log
+type "All jobs finished. Exiting on code 0..." >> regtools-backup.log
 exit 0
